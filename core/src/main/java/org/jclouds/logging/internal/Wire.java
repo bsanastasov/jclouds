@@ -62,7 +62,7 @@ public abstract class Wire {
                buffer.append("[\\n]\"");
                buffer.insert(0, "\"");
                buffer.insert(0, header);
-               getWireLog().debug(buffer.toString());
+               getWireLog().trace(buffer.toString());
                buffer.setLength(0);
             } else if ((ch < 32) || (ch > 127)) {
                buffer.append("[0x");
@@ -76,7 +76,7 @@ public abstract class Wire {
             buffer.append('\"');
             buffer.insert(0, '\"');
             buffer.insert(0, header);
-            getWireLog().debug(buffer.toString());
+            getWireLog().trace(buffer.toString());
          }
       } catch (IOException e) {
          logger.error(e, "Error tapping line");
